@@ -1,4 +1,4 @@
-# This is Igor Golubovich's git page for the DevOps cource from itacademy.by.  
+# This is Igor Golubovich's Git page for the DevOps cource from itacademy.by.  
 
 * Group is md-sa2-20-22.
 
