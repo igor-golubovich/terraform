@@ -7,3 +7,4 @@
 ## Contacts & communication
 
 - Author's email [igor.golubovich.1991@gmail.com](igor.golubovich.1991@gmail.com)
+- Author's telegram [@igz_z](https://t.me/igz_z)
