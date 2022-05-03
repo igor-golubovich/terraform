@@ -1,4 +1,4 @@
-# 04. GitOps by Igor Golubovich.
+# 04.GitOps by Igor Golubovich
 
 ## Repository
 
@@ -7,7 +7,7 @@
 
 ## Logs of pipelines:
 
-###First PR
+### First PR
 ```
 Current runner version: '2.290.1'
 Operating System
@@ -77,7 +77,7 @@ http.https://github.com/.extraheader
 Cleaning up orphan processes
 ```
 
-###Second PR
+### Second PR
 ```
 Current runner version: '2.290.1'
 Operating System
@@ -161,7 +161,7 @@ http.https://github.com/.extraheader
 Cleaning up orphan processes
 ```
 
-###Third PR
+### Third PR
 ```
 Current runner version: '2.290.1'
 Operating System
