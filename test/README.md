@@ -56,8 +56,10 @@ Vagrant.configure("2") do |config|
       cat /dev/null > ~/.bash_history && history -c && exit
       systemctl enable nginx
       systemctl start nginx
-      firewall-cmd --permanent --add-service=http
-	    firewall-cmd --reload
+      SHELL
+    web_centos.vm.provision "shell", inline: <<-SHELL
+      sudo firewall-cmd --permanent --add-service=http
+      sudo firewall-cmd --reload
       SHELL
     web_centos.vm.provision "file", source: "index.html", destination: "/tmp/"
     web_centos.vm.provision "shell", inline: <<-SHELL
