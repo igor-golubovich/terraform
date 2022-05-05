@@ -2,8 +2,8 @@
 
 ## Vagrant cloud:
 
-- [debian_image](https://github.com/igor-golubovich/ci_git)
-- [centos_image](https://github.com/igor-golubovich/ci_git)
+- [debian_image](https://app.vagrantup.com/igor_golubovich/boxes/web_debian)
+- [centos_image](https://app.vagrantup.com/igor_golubovich/boxes/web_centos)
 
 
 ## Vagrant files:
