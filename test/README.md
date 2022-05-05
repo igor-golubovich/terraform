@@ -1,6 +1,6 @@
 # 05.Vagrant by Igor Golubovich
 
-## Vagrant cloud
+## Vagrant cloud:
 
 - [debian_image](https://github.com/igor-golubovich/ci_git)
 - [centos_image](https://github.com/igor-golubovich/ci_git)
@@ -56,10 +56,12 @@ Vagrant.configure("2") do |config|
       cat /dev/null > ~/.bash_history && history -c && exit
       systemctl enable nginx
       systemctl start nginx
+      sudo firewall-cmd --permanent --add-service=http
+	    sudo firewall-cmd --reload
       SHELL
     web_centos.vm.provision "file", source: "index.html", destination: "/tmp/"
     web_centos.vm.provision "shell", inline: <<-SHELL
-      mv /tmp/index.html /var/www/html/index.html
+      mv /tmp/index.html /usr/share/nginx/html/index.html
       systemctl restart nginx
       SHELL
   end
