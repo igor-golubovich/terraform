@@ -9,7 +9,7 @@
 ## Vagrant files:
 
 ### debian
-```
+```go
 Vagrant.configure("2") do |config|
   config.vm.define "Debian" do |web_debian|
     config.vm.box = "debian/bullseye64"
@@ -38,7 +38,7 @@ end
 ```
 
 ### centos
-```
+```go
 Vagrant.configure("2") do |config|
   config.vm.define "centos" do |web_centos|
     config.vm.box = "generic/centos8"
@@ -68,7 +68,7 @@ end
 ```
 
 ### index.html
-```
+```html
 <html>
 <body bgcolor="gray">
 <h2><font color="gold"><div><center>05.Vagrant Homework</center></div></font></h2>
