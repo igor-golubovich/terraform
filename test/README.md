@@ -8,7 +8,7 @@
 
 ## Vagrant files:
 
-### debian
+### - debian:
 ```go
 Vagrant.configure("2") do |config|
   config.vm.define "Debian" do |web_debian|
@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-### centos
+### - centos:
 ```go
 Vagrant.configure("2") do |config|
   config.vm.define "centos" do |web_centos|
@@ -67,7 +67,7 @@ end
 
 ```
 
-### index.html
+### - index.html:
 ```html
 <html>
 <body bgcolor="gray">
