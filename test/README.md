@@ -62,7 +62,7 @@ vagrant@vagrant:~$ minikube addons list
 ## IT-ACADEMY environment:
 
 ```bash
-PLAY RECAP ********************************************************************************************************************************************************************************
+PLAY RECAP ****************************************************************************************************************************
 localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 node1                      : ok=768  changed=149  unreachable=0    failed=0    skipped=1315 rescued=0    ignored=6   
 node2                      : ok=507  changed=94   unreachable=0    failed=0    skipped=772  rescued=0    ignored=2   
