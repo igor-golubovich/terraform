@@ -69,25 +69,25 @@ node2                      : ok=507  changed=94   unreachable=0    failed=0    s
 
 Пятница 20 мая 2022  16:20:04 +0300 (0:00:00.077)       0:22:23.604 ***********
 ===============================================================================
-kubernetes/preinstall : Install packages requirements ----------------------------------------------------------------------------------------------------------------------------- 67.10s
-download : download_file | Validate mirrors --------------------------------------------------------------------------------------------------------------------------------------- 62.85s
-kubernetes/kubeadm : Join to cluster ---------------------------------------------------------------------------------------------------------------------------------------------- 30.85s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 30.15s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 28.71s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 27.90s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 26.39s
-kubernetes/control-plane : kubeadm | Initialize first master ---------------------------------------------------------------------------------------------------------------------- 25.43s
-bootstrap-os : Assign inventory name to unconfigured hostnames (non-CoreOS, non-Flatcar, Suse and ClearLinux, non-Fedora) --------------------------------------------------------- 21.72s
-container-engine/containerd : download_file | Download item ----------------------------------------------------------------------------------------------------------------------- 21.44s
-download : download_file | Download item ------------------------------------------------------------------------------------------------------------------------------------------ 18.52s
-download : download_file | Download item ------------------------------------------------------------------------------------------------------------------------------------------ 18.39s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 18.34s
-download : download_file | Download item ------------------------------------------------------------------------------------------------------------------------------------------ 18.00s
-bootstrap-os : Update Apt cache --------------------------------------------------------------------------------------------------------------------------------------------------- 16.39s
-container-engine/crictl : download_file | Download item --------------------------------------------------------------------------------------------------------------------------- 15.84s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 15.06s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 14.94s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 13.96s
-download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 13.23s
+kubernetes/preinstall : Install packages requirements ----------------------------------------------------------------------- 67.10s
+download : download_file | Validate mirrors --------------------------------------------------------------------------------- 62.85s
+kubernetes/kubeadm : Join to cluster ---------------------------------------------------------------------------------------- 30.85s
+download : download_container | Download image if required ------------------------------------------------------------------ 30.15s
+download : download_container | Download image if required ------------------------------------------------------------------ 28.71s
+download : download_container | Download image if required ------------------------------------------------------------------ 27.90s
+download : download_container | Download image if required ------------------------------------------------------------------ 26.39s
+kubernetes/control-plane : kubeadm | Initialize first master ---------------------------------------------------------------- 25.43s
+bootstrap-os : Assign inventory name to unconfigured hostnames (non-CoreOS, non-Flatcar, Suse and ClearLinux, non-Fedora) --- 21.72s
+container-engine/containerd : download_file | Download item ----------------------------------------------------------------- 21.44s
+download : download_file | Download item ------------------------------------------------------------------------------------ 18.52s
+download : download_file | Download item ------------------------------------------------------------------------------------ 18.39s
+download : download_container | Download image if required ------------------------------------------------------------------ 18.34s
+download : download_file | Download item ------------------------------------------------------------------------------------ 18.00s
+bootstrap-os : Update Apt cache --------------------------------------------------------------------------------------------- 16.39s
+container-engine/crictl : download_file | Download item --------------------------------------------------------------------- 15.84s
+download : download_container | Download image if required ------------------------------------------------------------------ 15.06s
+download : download_container | Download image if required ------------------------------------------------------------------ 14.94s
+download : download_container | Download image if required ------------------------------------------------------------------ 13.96s
+download : download_container | Download image if required ------------------------------------------------------------------ 13.23s
 igoz@Ubuntu20:~/Desktop/devops_homework/k8s/kubespray$
 ```
