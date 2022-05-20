@@ -1,48 +1,93 @@
-# 09.Docker by Igor Golubovich
+# 10.Kubernetes by Igor Golubovich
 
-## Links to your Docker image
-
-- [Docker Hub](https://hub.docker.com/repository/docker/golubovich91/web_test/)
-- [Github repo](https://github.com/igor-golubovich/09.Docker_hm)
-
-## Testing commands
+## My minikube commands:
 
 ```bash
-igoz@Ubuntu20:~/Desktop/devops_homework/Docker$ docker build -t i_golubovich_image:v1.0 .
-Sending build context to Docker daemon  43.01kB
-Step 1/4 : FROM python:alpine
-alpine: Pulling from library/python
-df9b9388f04a: Pull complete
-a1ef3e6b7a02: Pull complete
-7a687728470e: Pull complete
-4ecf30de1710: Pull complete
-c3b27164aa0c: Pull complete
-Digest: sha256:f4c1b7853b1513eb2f551597e2929b66374ade28465e7d79ac9e099ccecdfeec
-Status: Downloaded newer image for python:alpine
- ---> 8b74835e51c6
-Step 2/4 : MAINTAINER Igor_Golubovich
- ---> Running in 910462bbb416
-Removing intermediate container 910462bbb416
- ---> 24c5eef7b2db
-Step 3/4 : COPY test_api.py /test_api.py
- ---> f0ae10ab2007
-Step 4/4 : ENTRYPOINT ["python3","-u", "test_api.py"]
- ---> Running in a9a9488bc654
-Removing intermediate container a9a9488bc654
- ---> b669bcc6e860
-Successfully built b669bcc6e860
-Successfully tagged i_golubovich_image:v1.0
+1  minikube version
+2  minikube addons list
+3  minikube status
+4  minikube addons enable ingress
+5  minikube start
+6  minikube status
+7  minikube addons list
+8  minikube addons enable ingress
+9  minikube addons list
+10  minikube stop
+11  minikube delete
+12  minikube status
+23  minikube start --memory 2048 --cpus 2
 
-igoz@Ubuntu20:~/Desktop/devops_homework/Docker$ docker run -d -p 8090:8090 --name webserver i_golubovich_image:v1.0
-9be4ea855ed7546cf457743b91f02fda7fb76fe8a65bbb57b80efcbe8f90cce7
-igoz@Ubuntu20:~/Desktop/devops_homework/Docker$ curl http://localhost:8090
-Webserver's test was success
+vagrant@vagrant:~$ minikube addons list
+|-----------------------------|----------|--------------|--------------------------------|
+|         ADDON NAME          | PROFILE  |    STATUS    |           MAINTAINER           |
+|-----------------------------|----------|--------------|--------------------------------|
+| ambassador                  | minikube | disabled     | third-party (ambassador)       |
+| auto-pause                  | minikube | disabled     | google                         |
+| csi-hostpath-driver         | minikube | disabled     | kubernetes                     |
+| dashboard                   | minikube | disabled     | kubernetes                     |
+| default-storageclass        | minikube | enabled ✅   | kubernetes                     |
+| efk                         | minikube | disabled     | third-party (elastic)          |
+| freshpod                    | minikube | disabled     | google                         |
+| gcp-auth                    | minikube | disabled     | google                         |
+| gvisor                      | minikube | disabled     | google                         |
+| helm-tiller                 | minikube | disabled     | third-party (helm)             |
+| ingress                     | minikube | enabled ✅   | unknown (third-party)          |
+| ingress-dns                 | minikube | disabled     | google                         |
+| istio                       | minikube | disabled     | third-party (istio)            |
+| istio-provisioner           | minikube | disabled     | third-party (istio)            |
+| kong                        | minikube | disabled     | third-party (Kong HQ)          |
+| kubevirt                    | minikube | disabled     | third-party (kubevirt)         |
+| logviewer                   | minikube | disabled     | unknown (third-party)          |
+| metallb                     | minikube | disabled     | third-party (metallb)          |
+| metrics-server              | minikube | disabled     | kubernetes                     |
+| nvidia-driver-installer     | minikube | disabled     | google                         |
+| nvidia-gpu-device-plugin    | minikube | disabled     | third-party (nvidia)           |
+| olm                         | minikube | disabled     | third-party (operator          |
+|                             |          |              | framework)                     |
+| pod-security-policy         | minikube | disabled     | unknown (third-party)          |
+| portainer                   | minikube | disabled     | portainer.io                   |
+| registry                    | minikube | disabled     | google                         |
+| registry-aliases            | minikube | disabled     | unknown (third-party)          |
+| registry-creds              | minikube | disabled     | third-party (upmc enterprises) |
+| storage-provisioner         | minikube | enabled ✅   | google                         |
+| storage-provisioner-gluster | minikube | disabled     | unknown (third-party)          |
+| volumesnapshots             | minikube | disabled     | kubernetes                     |
+|-----------------------------|----------|--------------|--------------------------------|
+```
 
-igoz@Ubuntu20:~/Desktop/devops_homework/Docker$ telnet localhost 8090
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
+## Dashboard screen:
 
-Connection closed by foreign host.
-igoz@Ubuntu20:~/Desktop/devops_homework/Docker
+![minikube](minikube.jpg)
+
+## IT-ACADEMY environment:
+
+```bash
+PLAY RECAP ********************************************************************************************************************************************************************************
+localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+node1                      : ok=768  changed=149  unreachable=0    failed=0    skipped=1315 rescued=0    ignored=6   
+node2                      : ok=507  changed=94   unreachable=0    failed=0    skipped=772  rescued=0    ignored=2   
+
+Пятница 20 мая 2022  16:20:04 +0300 (0:00:00.077)       0:22:23.604 ***********
+===============================================================================
+kubernetes/preinstall : Install packages requirements ----------------------------------------------------------------------------------------------------------------------------- 67.10s
+download : download_file | Validate mirrors --------------------------------------------------------------------------------------------------------------------------------------- 62.85s
+kubernetes/kubeadm : Join to cluster ---------------------------------------------------------------------------------------------------------------------------------------------- 30.85s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 30.15s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 28.71s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 27.90s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 26.39s
+kubernetes/control-plane : kubeadm | Initialize first master ---------------------------------------------------------------------------------------------------------------------- 25.43s
+bootstrap-os : Assign inventory name to unconfigured hostnames (non-CoreOS, non-Flatcar, Suse and ClearLinux, non-Fedora) --------------------------------------------------------- 21.72s
+container-engine/containerd : download_file | Download item ----------------------------------------------------------------------------------------------------------------------- 21.44s
+download : download_file | Download item ------------------------------------------------------------------------------------------------------------------------------------------ 18.52s
+download : download_file | Download item ------------------------------------------------------------------------------------------------------------------------------------------ 18.39s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 18.34s
+download : download_file | Download item ------------------------------------------------------------------------------------------------------------------------------------------ 18.00s
+bootstrap-os : Update Apt cache --------------------------------------------------------------------------------------------------------------------------------------------------- 16.39s
+container-engine/crictl : download_file | Download item --------------------------------------------------------------------------------------------------------------------------- 15.84s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 15.06s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 14.94s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 13.96s
+download : download_container | Download image if required ------------------------------------------------------------------------------------------------------------------------ 13.23s
+igoz@Ubuntu20:~/Desktop/devops_homework/k8s/kubespray$
 ```
